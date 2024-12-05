@@ -1,0 +1,8 @@
+//Esto crea contenedores en la misma red: Uno para node (mi app es una imagen personalizada creada en base a un Dockerfile), y monguito en base a la version ultima de mongoDB.
+
+docker container create -p <puertoExterior>:<puertoInterior> --name <nameof container> --network <name of network: default = bridge> <nameof image>
+
+//Ejemplos
+docker container create -p 3000:3000 --name nodeContainer --network mired miapp:1.0.0
+
+docker container create -p 27017:27017 --name monguito --network mired -e MONGO_INITDB_ROOT_USERNAME=noel -e MONGO_INITDB_ROOT_PASSWORD=password mongo

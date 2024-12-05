@@ -1,0 +1,1 @@
+Que para que los servicios de los contenedores se conecten entre si debe de avr una red interna entre contenedores

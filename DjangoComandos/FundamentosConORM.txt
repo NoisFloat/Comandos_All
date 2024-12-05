@@ -1,0 +1,15 @@
+#El siguiente comando genera las migraciones para los cambios realizados en los modelos de tu aplicación Django, sin aplicarlos aún a la base de datos. Esto es útil para preparar las instrucciones que luego se usarán para modificar la estructura de la base de datos:
+
+--python manage.py makemigrations
+
+#Este comando se debe de ejecutar luego de make
+Migrations
+
+#Después de crear las migraciones, puedes usar el siguiente comando para ver el SQL que Django generará para realizar los cambios, pero sin ejecutarlo todavía. Esto es útil para revisar o depurar el SQL antes de aplicarlo:
+
+python manage.py sqlmigrate personas 0001
+
+
+#El siguiente comando es para aplicar las migraciones //Ya modificar la base de datos
+
+Python manage.py migrate

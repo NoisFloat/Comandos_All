@@ -1,0 +1,38 @@
+# Ver la versión de Django instalada
+django-admin --version
+
+# Crear un nuevo proyecto de Django
+django-admin startproject nombre_del_proyecto
+
+# Cambiar al directorio del proyecto
+cd nombre_del_proyecto
+
+# Ejecutar el servidor de desarrollo
+python manage.py runserver
+
+# Crear una nueva aplicación dentro del proyecto
+python manage.py startapp nombre_de_la_app
+
+# Realizar migraciones de la base de datos
+python manage.py migrate
+
+# Crear migraciones para los cambios en los modelos
+python manage.py makemigrations
+
+# Muestra las migraciones pendientes a realizar en un proyecto django
+python manage.py showmigrations
+
+# Crear un superusuario (para acceder al admin de Django)
+python manage.py createsuperuser
+
+# Verificar errores potenciales en el proyecto
+python manage.py check
+
+# Abrir la consola interactiva de Django (shell)
+python manage.py shell
+
+# Ejecutar pruebas unitarias
+python manage.py test
+
+# Compilar archivos estáticos (solo en producción)
+python manage.py collectstatic

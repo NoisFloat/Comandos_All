@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  monguito:
+    image: mongo
+    ports:
+      - "27017:27017"  # Exponer el puerto de MongoDB al host
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: noel
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongo-data:/data/db  # Volumen persistente para los datos de MongoDB
+    container_name: monguito  # Nombre personalizado para el contenedor
+    networks:
+      - mired  # Conectando a la red 'mired'
+
+  chanchito:
+    build: .
+    ports:
+      - "3000:3000"  # Exponer el puerto de la app Node.js al host
+    container_name: chanchito  # Nombre personalizado para el contenedor
+    networks:
+      - mired  # Conectando a la misma red 'mired'
+    depends_on:
+      - monguito  # Asegura que el servicio 'monguito' esté listo antes de arrancar
+
+volumes:
+  mongo-data:  # Volumen persistente para MongoDB
+
+networks:
+  mired:  # Definiendo la red personalizada 'mired'
+    driver: bridge  # Usamos la red bridge predeterminada

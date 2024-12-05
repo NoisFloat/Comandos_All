@@ -1,0 +1,11 @@
+//En proyecto ASP.NET 8
+//dotnet new mvc -o MvcMovie
+dotnet new web -o PizzaStore -f net8.0 //Creación de APP Web ASP.NET8
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 8.0
+dotnet tool install --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0
+
+
+--Una vez ya hayas creado tus modelos y DbContext debes de hacer esto para utilizar la DB SQLite.
+dotnet ef migrations add InitialCreate
+dotnet ef database update

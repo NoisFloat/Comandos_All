@@ -1,0 +1,21 @@
+*dotnet tool install --global dotnet-ef 			   # Reconocimiento de Consola de EF, (Instalación, Actualización)
+
+*dotnet add package Microsoft.EntityFrameworkCore --version 8.0.10
+*dotnet add package Microsoft.EntityFrameworkCore.SqlServer #Driver (Motor a los que los vamos a conectar)
+*dotnet add package Microsoft.EntityFrameworkCore.Design    #Scaffolding (Generación de Codigo) Diseñar identidades por codigo
+*dotnet add package Microsoft.EntityFrameworkCore.Tools	   #using de Terminal (Herramientas para generar las bases de datos por migraciones)
+*dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 8.0.10 #Para añadirle seguridad de Auth
+
+
+#Para el marco de trabajo DB First
+*dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS;Database=DatabaseName;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+
+#Definiciones (dbcontext = contexto de base de datos, objeto para acceder a database, -o = salida de Models Generados by Scaffolding)
+
+
+#Usos de Cadenas de Conexión Seguras para no llevarlas a Producción (Tambien conocidos como secretos, no necesariamente pueden ser StringConnection,
+ puede ser hash, saltos.etc
+
+
+

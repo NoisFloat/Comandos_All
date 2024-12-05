@@ -1,0 +1,64 @@
+-Conocer la version
+
+*docker --version
+
+*docker pull node:version
+*docker pull node
+
+-para borrar imagenes
+
+*docker images rm node
+*docker rmi node:version
+
+-Las imágenes se podría decir que es la clase: No es la que se ejecuta, es la plantilla donde están todas las dependencias:
+
+*EL CONTENEDOR ES DONDE SE EJECUTA LA IMAGEN Y DONDE LE CONFIGURLAS LA DEPENDENCIAS:
+
+-Para crear un contenedor
+
+*docker container create <nombre de la imagen>
+(con un nombre en espeficico)
+
+
+-Docker container te devuelve un id: Dicho id, es el id del objeto creado:(Para inicializarlo debes de ejecutar)
+
+*docker start <id> (Listo ya tienes corriendo una App de Linux en un entorno Aislado)
+*docker start monguillo
+-Si quieres parar un contenedor:
+
+*docker stop <id> 35e26ea0bd712faa274cff04abdc7a84a7ece1aafb410c47625f11c35d0f5208
+
+-Si quieres listar los contenedores:
+
+*docker ps -a
+
+-Si quieres eliminar un contenedor:
+
+*docker rm <id>
+*docker rm <tag>
+
+-Configurar Port Mapping(Desde la creación de un contenedor)
+
+ *docker container create -p 27017:27017 --name monguito mongo
+*docker container create -p 27017 --name monguito mongo #Dejar que elija el puerto docker de maquina anfitrión
+
+-Ver logs de un container
+
+*docker logs <nameof container>
+*docker logs <nameof container> --follow (Para estar monitoreando todos los logs)
+
+-Creación de pull start y crear contenedor
+
+*docker run mongo #Este te deja los logs congela la shell
+*docker run -d mongo #Este no te los muestra y te deja salir de la CLI (-d dettached) (dettached = separado)
+*docker run --name monguito -p 27017:27017 -d mongo (Este crea, ejecuta y mapea los puertos)(Descarga la imagen. crea un contenedor de la imagen y la ejecuta)
+
+*Ejemplo de creación de un servicio de mongo incluyendo su configuración con las variables de entorno:
+
+*docker container create -p 27017:27017 --name monguito mongo -e MONGO_INITDB_ROOT_USERNAME=noel -e MONGO_INITDB_ROOT_PASSWORD=password
+
+-Crear un contenedor de docker en base a un Dockerfile
+
+*docker build #Recordatorio: Tu terminal debe de estar ubicada en el mismo lugar que el archivo Dockerfile
+
+

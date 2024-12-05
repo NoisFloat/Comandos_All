@@ -1,0 +1,2 @@
+#Esto es para una estructura ya definida, pero crea una pagina cshtml, con su PageModel ASOCIADO
+dotnet new page --name PizzaList --namespace ContosoPizza.Pages --output Pages

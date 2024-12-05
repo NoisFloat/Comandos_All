@@ -1,0 +1,7 @@
+Lo que crea realmente es una imagen:
+
+-Donde -t es el nombre del contenedor <(nameof repository):(tag)> 
+-donde va el punto puedes poner la ruta del archivo dockerfile
+
+*docker build -t miapp:1.0.0 .
+D

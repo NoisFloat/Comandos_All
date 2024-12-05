@@ -1,0 +1,9 @@
+-Mostrar todas las redes
+
+*docker network ls
+
+-Crear una red con docker (para docker)
+
+*docker network create <nombre>
+
+-
